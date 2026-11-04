@@ -34,7 +34,8 @@
   --color-primary-dark: #31261a;
   --color-primary-light: #faf4ea;
   --color-secondary-dark: #a28268;
-  --color-brand-light: #819b57;
+  --color-brand-normal: #819b57;
+  --color-brand-light: #cfcfbc;
   --color-brand-dark: #465929;
 }
 * {
@@ -89,8 +90,8 @@ ul {
   padding: 16px 32px;
   color: var(--color-primary-light);
   font-weight: 600;
-  background-color: var(--color-brand-light);
-  border: 2px solid var(--color-brand-light);
+  background-color: var(--color-brand-normal);
+  border: 2px solid var(--color-brand-normal);
   border-radius: 8px;
   cursor: pointer;
 }
@@ -245,6 +246,28 @@ ul {
   font-size: 14px;
   font-weight: 300;
 }
+.carousel-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid var(--color-primary-dark);
+  cursor: pointer;
+}
+.carousel-arrow {
+  color: var(--color-primary-dark);
+}
+.carousel-button:hover {
+  background-color: var(--color-primary-dark);
+}
+.carousel-button:hover .carousel-arrow {
+  color: var(--color-primary-light);
+  filter: invert(1) sepia(1) saturate(0) brightness(2);
+}
 .contact-title {
   margin-bottom: 16px;
 }
@@ -255,7 +278,13 @@ ul {
   text-decoration: none;
 }
 .address-link:hover {
-  color: var(--color-brand-light);
+  color: var(--color-brand-normal);
+}
+.address-icon {
+  color: var(--color-primary-light);
+}
+.address-icon:hover {
+  color: var(--color-brand-normal);
 }
 .address-copyright {
   font-size: 14px;
