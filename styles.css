@@ -41,6 +41,11 @@
 * {
   box-sizing: border-box;
 }
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
 body {
   color: var(--color-primary-dark);
   background-color: var(--color-primary-light);
@@ -58,6 +63,9 @@ h5,
 h6,
 p {
   margin-top: 0;
+}
+a {
+  display: inline-block;
 }
 address {
   font-style: normal;
@@ -140,11 +148,11 @@ ul {
   font-weight: 900;
 }
 .hero-title .accent {
-  color: var(--color-brand-light);
+  color: var(--color-brand-normal);
 }
 .advantages-section {
   padding: 16px 0;
-  background-color: var(--color-brand-light);
+  background-color: var(--color-brand-normal);
 }
 .advantages-list {
   display: flex;
@@ -183,7 +191,7 @@ ul {
   margin-bottom: 42px;
 }
 .traditions-text .brand {
-  color: var(--color-brand-light);
+  color: var(--color-brand-normal);
   font-weight: 600;
 }
 .traditions-text .uppercase {
@@ -203,6 +211,18 @@ ul {
   border: 2px solid var(--color-brand-light);
   content: "";
 }
+.chefs-list {
+  display: flex;
+  gap: 40px 30px;
+  flex-wrap: wrap;
+}
+.chefs-item {
+  flex-basis: calc((100% - 30px) / 2);
+}
+.chef-card {
+  display: flex;
+  gap: 30px;
+}
 .chef-photo {
   border-radius: 4px 4px 4px 200px;
   box-shadow:
@@ -213,6 +233,17 @@ ul {
   margin-bottom: 16px;
   font-size: 40px;
   font-weight: 600;
+}
+.chef-text p {
+  margin-bottom: 24px;
+}
+.chef-text p:last-child {
+  margin-bottom: 0;
+}
+.formats-contaner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 .formats-list {
   display: flex;
@@ -252,6 +283,7 @@ ul {
   justify-content: center;
   width: 44px;
   height: 44px;
+  flex-shrink: 0;
   padding: 0;
   background-color: transparent;
   border-radius: 50%;
@@ -268,8 +300,41 @@ ul {
   color: var(--color-primary-light);
   filter: invert(1) sepia(1) saturate(0) brightness(2);
 }
+.contact-section {
+  padding-bottom: 96px;
+}
+.contact-container {
+  display: flex;
+  gap: 32px;
+}
 .contact-title {
   margin-bottom: 16px;
+}
+.contact-map {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 16px;
+}
+.footer {
+  padding: 32px 0;
+}
+.footer-container {
+  display: flex;
+  gap: 20px;
+}
+.footer-nav,
+.footer-addres {
+  display: flex;
+  flex-basis: 50%;
+  gap: 20px;
+}
+.footer-logo,
+.footer-menu {
+  flex-grow: 1;
+}
+.address-list,
+.address-info {
+  flex-grow: 1;
 }
 .address-link {
   color: var(--color-primary-light);
