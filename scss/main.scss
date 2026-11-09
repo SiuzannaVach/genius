@@ -1,0 +1,27 @@
+@import "./utils/vaariables";
+@import "./utils/fonts";
+@import "./base";
+@import "./utils/utils";
+@import "./components/buttons";
+@import "./components/links";
+@import "./components/header";
+@import "./components/hero-section";
+@import "./components/advantages";
+@import "./components/section-title";
+@import "./components/traditions";
+@import "./components/formats";
+@import "./components/carousel";
+@import "./components/contacts";
+@import "./components/footer";
+@import "./components/address";
+@import "./components/backdrop";
+@import "./components/form";
+.section {
+  padding: 48px 0;
+}
+.container {
+  width: 100%;
+  max-width: 1288px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
