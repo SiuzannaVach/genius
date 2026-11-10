@@ -84,8 +84,12 @@ ul {
   overflow: hidden;
 }
 
-.texts-brend {
+.text-brend {
   color: var(--color-brand-normal);
+}
+
+.text-brend-dark {
+  color: var(--color-brand-dark);
 }
 
 .text-bold {
@@ -178,23 +182,19 @@ ul {
   display: flex;
   gap: 30px;
 }
-
-.chef-photo {
+.chef-card__photo {
   border-radius: 4px 4px 4px 200px;
   box-shadow: -16px 16px 0 0 var(--color-primary-light), -16px 16px 0 2px var(--color-secondary-dark);
 }
-
-.chef-title {
+.chef-card__title {
   margin-bottom: 16px;
   font-size: 40px;
   font-weight: 600;
 }
-
-.chef-text p {
+.chef-card__text {
   margin-bottom: 24px;
 }
-
-.chef-text p:last-child {
+.chef-card__text:last-child {
   margin-bottom: 0;
 }
 
@@ -227,6 +227,40 @@ ul {
 .carousel-button:hover .carousel-arrow {
   color: var(--color-primary-light);
   filter: invert(1) sepia(1) saturate(0) brightness(2);
+}
+
+.format-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 444px;
+  padding: 24px;
+  background-image: linear-gradient(180deg, rgba(49, 38, 26, 0) 55.21%, rgba(49, 38, 26, 0.71) 72.92%, var(--color-primary-dark) 100%);
+  border-radius: 16px;
+  transition: transform 0.3s;
+  overflow: hidden;
+}
+.format-card:hover {
+  transform: scale(1.05);
+}
+.format-card__image {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.format-card__title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-primary-light);
+}
+.format-card__text {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--color-primary-light);
 }
 
 .header {
@@ -287,147 +321,82 @@ ul {
   font-weight: 300;
 }
 
-.section-title {
-  font-size: 64px;
-  font-weight: 900;
-  line-height: 1.3;
-}
-
-.section-title.centered {
-  text-align: center;
-}
-
-.section-title .accent {
-  color: var(--color-brand-dark);
-}
-
 .traditions-section {
   padding-top: 96px;
 }
-
-.traditions-container {
+.traditions-section-container {
   display: flex;
   justify-content: space-between;
   gap: 40px;
 }
-
-.traditions-content {
+.traditions-section-content {
   max-width: 710px;
 }
-
-.traditions-title {
+.traditions-section-title {
   margin-bottom: 42px;
 }
-
-.traditions-text .limited {
+.traditions-section__text --limited {
   max-width: 340px;
 }
 
-.formats-contaner {
+.formats-section__container {
   display: flex;
   align-items: center;
   gap: 32px;
 }
-
-.formats-list {
+.formats-section__list {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
-
-.formats-item {
+.formats-section__item {
   flex-basis: calc((100% - 40px) / 3);
 }
 
-.format-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  height: 444px;
-  background-image: linear-gradient(180deg, rgba(49, 38, 26, 0) 55.21%, rgba(49, 38, 26, 0.71) 72.92%, var(--color-primary-dark) 100%);
-  background-repeat: no-repeat;
-  border: 1px;
-  border-radius: 16px;
-  padding: 24px;
-  transition: transform 0.3s;
-}
-
-.format-card:hover {
-  transform: scale(1.05);
-}
-
-.format-image {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.formats-title {
-  margin-bottom: 80px;
-}
-
-.format-title {
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--color-primary-light);
-}
-
-.format-text {
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--color-primary-light);
-}
-
-.chefs-title {
+.chefs-section__title {
   position: relative;
   margin: 0 auto 80px;
 }
-
-.chefs-title::before,
-.chefs-title::after {
+.chefs-section__title::before, .chefs-section__title::after {
   position: absolute;
   width: 352px;
   bottom: 24px;
   border: 2px solid var(--color-brand-light);
   content: "";
 }
-
-.chefs-title::before {
+.chefs-section__title::before {
   left: 0;
 }
-
-.chefs-title::after {
+.chefs-section__title::after {
   right: 0;
 }
-
-.chefs-list {
+.chefs-section__list {
   display: flex;
   gap: 40px 30px;
   flex-wrap: wrap;
 }
-
-.chefs-item {
+.chefs-section__item {
   flex-basis: calc((100% - 30px) / 2);
 }
 
 .contact-section {
   padding-bottom: 96px;
 }
-
-.contact-container {
+.contact-section__container {
   display: flex;
   gap: 32px;
 }
-
-.contact-title {
+.contact-section__title {
   margin-bottom: 16px;
 }
-
-.contact-map {
+.contact-section__form-field {
+  margin-bottom: 24px;
+}
+.contact-section__button {
+  display: block;
+  margin: 0 auto 24px;
+}
+.contact-section__map {
   flex-shrink: 0;
   border: none;
   border-radius: 16px;
@@ -482,69 +451,6 @@ ul {
   flex-grow: 1;
 }
 
-.form-field {
-  margin-bottom: 32px;
-}
-
-.form-label {
-  position: absolute;
-  top: 16px;
-  left: 42px;
-}
-
-.form-input {
-  padding: 16px 42px;
-  width: 100%;
-  font-size: 16px;
-  border: 1px solid var(--color-secondary-dark);
-  border-radius: 8px;
-  background-color: transparent;
-}
-
-.form-input:focus {
-  border-color: var(--color-brand-normal);
-  outline: none;
-}
-
-.form-input::-moz-placeholder {
-  color: var(--color-secondary-dark);
-  font-size: 16px;
-  line-height: 1.17;
-}
-
-.form-input::placeholder {
-  color: var(--color-secondary-dark);
-  font-size: 16px;
-  line-height: 1.17;
-}
-
-.form-input:focus::-moz-placeholder {
-  color: var(--color-primary-dark);
-}
-
-.form-input:focus::placeholder {
-  color: var(--color-primary-dark);
-}
-
-.form-button {
-  display: block;
-  margin: 0 auto 24px;
-}
-
-.form-terms {
-  margin: 0 auto;
-  max-width: 220px;
-  font-weight: 500;
-  font-style: 12px;
-  line-height: 1.5;
-  text-align: center;
-}
-
-.form-terms-link {
-  color: var(--color-primary-dark);
-  text-underline-offset: 2px;
-}
-
 .container {
   width: 100%;
   max-width: 1288px;
@@ -554,6 +460,14 @@ ul {
 
 .section {
   padding: 48px 0;
+}
+.section__title {
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+.section__title--centered {
+  text-align: center;
 }
 
 .modal {
@@ -572,4 +486,17 @@ ul {
   position: absolute;
   top: 40px;
   right: 40px;
+}
+
+.form-terms {
+  margin: 0 auto;
+  max-width: 220px;
+  font-weight: 500;
+  font-style: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+.form-terms__link {
+  color: var(--color-primary-dark);
+  text-underline-offset: 2px;
 }/*# sourceMappingURL=main.css.map */
