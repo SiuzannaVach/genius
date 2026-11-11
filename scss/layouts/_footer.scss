@@ -6,38 +6,145 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-}
 
-.footer::before,
-.footer::after {
+  &::before {
+    left: -32px;
+  }
+
+  &::after {
+    right: -32px;
+  }
+
+&::before,
+&::after {
   position: absolute;
+  z-index: 0;
   bottom: 0;
   background-repeat: no-repeat;
   content: "";
 }
-.footer::before {
+
+&::before {
   width: 180px;
   height: 120px;
   left: 0;
   background-image: url("../images/decor-bread-small.png");
 }
-.footer::after {
-  width: 380px;
-  height: 190px;
+
+&::after {
+  width: 240px;
+  height: 120px;
   right: 0;
+  background-size: contain;
   background-image: url("../images/decor-bread-large.png");
 }
-.footer-container {
+
+&__container {
+  position: relative;
+  z-index: 1;
   display: flex;
   gap: 20px;
+  flex-direction: column;
+
+  @media screen and (min-width: $bp-tablet) {
+    flex-direction: row;
+  }
 }
-.footer-nav,
-.footer-addres {
+
+&__nav,
+&__address {
   display: flex;
-  flex-basis: 50%;
+  flex-direction: column;
   gap: 20px;
+  text-align: center;
+
+  @media screen and (min-width: $bp-tablet) {
+    flex-direction: row;
+    flex-basis: 50%;
+    text-align: left;
+  }
 }
-.footer-logo,
-.footer-menu {
+
+&__logo,
+&__menu {
   flex-grow: 1;
+}
+
+&__address-contacts,
+&__address-info {
+  flex-grow: 1;
+}
+
+&__address-contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+
+  @media screen and (min-width: $bp-tablet) {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+&__address-socials {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+
+  @media screen and (min-width: $bp-tablet) {
+    justify-content: flex-start;
+  }
+}
+
+&__address-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 12px;
+
+  @media screen and (min-width: $bp-tablet) {
+    justify-content: flex-start;
+  }
+
+  > li:nth-child(-n + 3) {
+    flex-basis: 100%;
+  }
+
+  > li:first-child {
+    white-space: nowrap;
+  }
+}
+
+&__address-link,
+.address-link {
+  color: var(--color-primary-light);
+  font-size: 16px;
+  font-weight: 300;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-brand-normal);
+  }
+}
+
+&__address-icon,
+.address-icon {
+  color: var(--color-primary-light);
+
+  &:hover {
+    color: var(--color-brand-normal);
+  }
+}
+
+&__address-copyright,
+.address-copyright {
+  font-size: 14px;
+  color: var(--color-primary-light);
+
+  &:hover {
+    color: var(--color-brand-normal);
+  }
+}
 }
