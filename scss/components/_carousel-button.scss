@@ -10,17 +10,16 @@
   border-radius: 50%;
   border: 1px solid var(--color-primary-dark);
   cursor: pointer;
-}
-.carousel-button.next {
-  transform: rotate(180deg);
-}
-.carousel-arrow {
-  color: var(--color-primary-dark);
-}
-.carousel-button:hover {
-  background-color: var(--color-primary-dark);
-}
-.carousel-button:hover .carousel-arrow {
-  color: var(--color-primary-light);
-  filter: invert(1) sepia(1) saturate(0) brightness(2);
+
+  &:hover {
+    background-color: var(--color-primary-dark);
+
+    .carousel-arrow {
+      filter: invert(1) sepia(1) saturate(0) brightness(2);
+    }
+  }
+
+  &.next {
+    transform: rotate(180deg);
+  }
 }
